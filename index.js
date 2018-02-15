@@ -6,12 +6,10 @@ FakeControl.prototype.addTo = function() {}
 FakeControl.prototype.onAdd = function() {}
 FakeControl.prototype.onRemove = function() {}
 
-module.exports = {
+module.exports = Object.assign({}, require('mapbox-gl'), {
   Map: require('./classes/map'),
-  LngLat: require('mapbox-gl/src/geo/lng_lat'),
-  LngLatBounds: require('mapbox-gl/src/geo/lng_lat'),
   NavigationControl: FakeControl,
   ScaleControl: FakeControl,
   AttributionControl: FakeControl,
   GeolocateControl: FakeControl
-}
+});
